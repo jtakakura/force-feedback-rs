@@ -1,0 +1,14 @@
+[package]
+name = "force-feedback-sys"
+description = "Bindings to ForceFeedback for macOS"
+homepage = "https://github.com/jtakakura/force-feedback-rs"
+repository = "https://github.com/jtakakura/force-feedback-rs"
+version = "0.1.0"
+authors = ["Junji Takakura <j.takakura@gmail.com>"]
+license = "MIT / Apache-2.0"
+build = "build.rs"
+
+[dependencies]
+core-foundation-sys = "0.6"
+io-kit-sys = "0.1"
+mach="0.2"
