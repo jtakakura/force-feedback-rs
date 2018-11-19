@@ -1,0 +1,2 @@
+[workspace]
+members = ["force-feedback-sys"]
