@@ -1,7 +1,23 @@
 // exports from `MacTypes.h`
+pub type UInt8 = ::std::os::raw::c_uchar;
+pub type SInt8 = ::std::os::raw::c_schar;
+pub type UInt16 = ::std::os::raw::c_ushort;
+pub type SInt16 = ::std::os::raw::c_short;
 pub type UInt32 = ::std::os::raw::c_uint;
 pub type SInt32 = ::std::os::raw::c_int;
-pub type HRESULT = ::std::os::raw::c_long;
+
+#[derive(Debug, Copy)]
+pub struct NumVersion {
+    pub nonRelRev: UInt8,
+    pub stage: UInt8,
+    pub minorAndBugRev: UInt8,
+    pub majorRev: UInt8,
+}
+impl Clone for NumVersion {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
 
 // Version Release Stage Codes
 pub const developStage: u32 = 0x20;
@@ -10,6 +26,7 @@ pub const betaStage: u32 = 0x60;
 pub const finalStage: u32 = 0x80;
 
 // Common HRESULT Values
+pub type HRESULT = ::std::os::raw::c_long;
 pub const S_OK: HRESULT = 0x00000000;
 pub const S_FALSE: HRESULT = 0x00000001;
 pub const E_NOTIMPL: HRESULT = 0x80004001;
